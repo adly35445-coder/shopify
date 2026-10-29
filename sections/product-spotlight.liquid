@@ -1,0 +1,144 @@
+{{ 'section-product-spotlight.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-spotlight.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign first_bg = section.blocks.first.settings.background | default: '#E8C6CF'
+-%}
+
+<product-spotlight
+  class="spotlight section-{{ section.id }}-padding"
+  style="--spot-bg: {{ first_bg }}; --spot-text: {{ section.settings.text_color }};"
+>
+  <div class="spotlight__heading page-width">
+    {%- if section.settings.title != blank -%}
+      <h2 class="spotlight__title">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <p class="spotlight__subtitle">{{ section.settings.subtitle | escape }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="spotlight__stage">
+    <button type="button" class="spotlight__arrow spotlight__arrow--prev" aria-label="{{ 'general.slider.previous_slide' | t }}"></button>
+
+    <ul class="spotlight__track" role="list">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign product = block.settings.product
+          assign name = block.settings.name
+          if name == blank and product != blank
+            assign name = product.title
+          endif
+          assign link = block.settings.link
+          if product != blank
+            assign link = product.url
+          endif
+        -%}
+        <li
+          class="spotlight__item{% if forloop.first %} is-active{% endif %}"
+          data-index="{{ forloop.index0 }}"
+          data-bg="{{ block.settings.background }}"
+          {{ block.shopify_attributes }}
+        >
+          <div class="spotlight__media">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '(min-width: 750px) 40vw, 70vw', alt: name }}
+            {%- elsif product != blank and product.featured_media != blank -%}
+              {{ product.featured_media | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '(min-width: 750px) 40vw, 70vw', alt: name }}
+            {%- else -%}
+              {%- render 'product-mock', kind: block.settings.mock_kind, cap: block.settings.mock_cap, body: block.settings.mock_body, ink: block.settings.mock_ink, label: block.settings.mock_label, size: 'lg' -%}
+            {%- endif -%}
+          </div>
+
+          <div class="spotlight__info">
+            <h3 class="spotlight__name">{{ name | escape }}</h3>
+            {%- if product != blank and product.selected_or_first_available_variant.available -%}
+              {%- form 'product', product, class: 'spotlight__form' -%}
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                <button type="submit" class="spotlight__button">{{ section.settings.button_label | escape }}</button>
+              {%- endform -%}
+            {%- else -%}
+              <a
+                class="spotlight__button"
+                {% if link != blank %}
+                  href="{{ link }}"
+                {% else %}
+                  role="link" aria-disabled="true"
+                {% endif %}
+              >
+                {{- section.settings.button_label | escape -}}
+              </a>
+            {%- endif -%}
+            {%- if section.settings.more_label != blank and link != blank -%}
+              <a class="spotlight__more" href="{{ link }}">{{ section.settings.more_label | escape }}</a>
+            {%- endif -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    <button type="button" class="spotlight__arrow spotlight__arrow--next" aria-label="{{ 'general.slider.next_slide' | t }}"></button>
+  </div>
+</product-spotlight>
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Product spotlight",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 10,
+  "settings": [
+    { "type": "text", "id": "title", "label": "Heading", "default": "لاقي روتينك" },
+    { "type": "text", "id": "subtitle", "label": "Subheading", "default": "خمس منتجات. بشرة صحية ومنورة." },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#FFFFFF" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "أضيفي للسلة" },
+    { "type": "text", "id": "more_label", "label": "Learn more label", "default": "اعرفي أكتر ←" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 56 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 56 }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "image_picker", "id": "image", "label": "Image (optional, overrides product image)" },
+        { "type": "text", "id": "name", "label": "Name (if no product is picked)" },
+        { "type": "url", "id": "link", "label": "Link (if no product is picked)" },
+        { "type": "color", "id": "background", "label": "Background color", "default": "#E8C6CF" },
+        {
+          "type": "select",
+          "id": "mock_kind",
+          "label": "Drawn product (shown if no image)",
+          "options": [
+            { "value": "bottle", "label": "Bottle" },
+            { "value": "jar", "label": "Jar" }
+          ],
+          "default": "bottle"
+        },
+        { "type": "color", "id": "mock_cap", "label": "Drawn product cap color", "default": "#2B2420" },
+        { "type": "color", "id": "mock_body", "label": "Drawn product body color", "default": "#FFFFFF" },
+        { "type": "color", "id": "mock_ink", "label": "Drawn product text color", "default": "#2B2420" },
+        { "type": "text", "id": "mock_label", "label": "Drawn product label" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Product spotlight", "blocks": [{ "type": "item" }, { "type": "item" }, { "type": "item" }] }
+  ]
+}
+{% endschema %}
