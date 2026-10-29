@@ -344,3 +344,65 @@
   .hero-slider__text,
   .hero-slider__buttons { opacity: 1; transform: none; animation: none !important; }
 }
+
+/* Real photos: the photo fades into the slide colour (pick the photo's floor colour) and the text sits on it */
+.hero-slider__slide--photo {
+  background: var(--slide-bg);
+}
+
+.hero-slider__slide--photo .hero-slider__media::after {
+  background: linear-gradient(to bottom, transparent 45%, var(--slide-bg) 94%);
+  opacity: 1;
+}
+
+.hero-slider__slide--photo .hero-slider__box {
+  --color-foreground: var(--slide-ink, 139, 102, 86);
+}
+
+.hero-slider__slide--photo .hero-slider__media img {
+  object-position: center 35%;
+}
+
+@media screen and (max-width: 749px) {
+  .hero-slider__slide--photo .hero-slider__media {
+    bottom: 38%;
+  }
+
+  .hero-slider__slide--photo .hero-slider__content {
+    padding-bottom: 3.2rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  /* Tall product shots sit on one half, text on the other */
+  .hero-slider__slide--photo .hero-slider__media {
+    inset-inline-start: 50%;
+  }
+
+  .hero-slider__slide--photo .hero-slider__media::after {
+    background: linear-gradient(to left, transparent 70%, var(--slide-bg) 100%);
+  }
+
+  [dir='rtl'] .hero-slider__slide--photo .hero-slider__media::after {
+    background: linear-gradient(to right, transparent 70%, var(--slide-bg) 100%);
+  }
+
+  .hero-slider__slide--photo .hero-slider__content {
+    align-items: center;
+    justify-content: flex-start;
+    text-align: start;
+    padding-bottom: 0;
+  }
+
+  .hero-slider__slide--photo .hero-slider__box {
+    width: 50%;
+  }
+
+  .hero-slider__slide--photo .hero-slider__buttons {
+    justify-content: flex-start;
+  }
+
+  [dir='rtl'] .hero-slider__slide--photo .hero-slider__eyebrow {
+    text-align: right;
+  }
+}

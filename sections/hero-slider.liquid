@@ -22,7 +22,10 @@
   <div class="hero-slider__track">
     {%- for block in section.blocks -%}
       <div
-        class="hero-slider__slide color-{{ block.settings.color_scheme }}{% if forloop.first %} is-active{% endif %} hero-slider__slide--{{ block.settings.text_position }}"
+        class="hero-slider__slide color-{{ block.settings.color_scheme }}{% if forloop.first %} is-active{% endif %} hero-slider__slide--{{ block.settings.text_position }}{% if block.settings.image != blank %} hero-slider__slide--photo{% endif %}"
+        {% if block.settings.image != blank %}
+          style="--slide-bg: {{ block.settings.accent }};{% if block.settings.ink != blank %} --slide-ink: {{ block.settings.ink.red }}, {{ block.settings.ink.green }}, {{ block.settings.ink.blue }};{% endif %}"
+        {% endif %}
         role="group"
         aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
         aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
@@ -161,7 +164,8 @@
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Image (desktop)", "info": "Wide image, 1920 × 1080 px or larger" },
         { "type": "image_picker", "id": "image_mobile", "label": "Image (mobile, optional)", "info": "Tall image, 1080 × 1350 px" },
-        { "type": "color", "id": "accent", "label": "Placeholder color (shown until you add an image)", "default": "#F8F2EB" },
+        { "type": "color", "id": "ink", "label": "Text color on photo slides" },
+        { "type": "color", "id": "accent", "label": "Background color", "info": "With a photo, the photo fades into this color. Pick the color at the bottom of the photo.", "default": "#F8F2EB" },
         {
           "type": "select",
           "id": "mock_kind",
