@@ -1,0 +1,35 @@
+<div class="marquee color-{{ section.settings.color_scheme }} gradient" style="--marquee-speed: {{ section.settings.speed }}s">
+  <div class="marquee__track">
+    {%- for i in (1..2) -%}
+      <ul class="marquee__list"{% if i == 2 %} aria-hidden="true"{% endif %}>
+        {%- for block in section.blocks -%}
+          <li class="marquee__item" {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</li>
+          <li class="marquee__sep" aria-hidden="true">✦</li>
+        {%- endfor -%}
+      </ul>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Scrolling words",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 10,
+  "settings": [
+    { "type": "range", "id": "speed", "min": 10, "max": 60, "step": 2, "unit": "s", "label": "Time for one loop", "default": 28 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-4" }
+  ],
+  "blocks": [
+    {
+      "type": "word",
+      "name": "Word",
+      "settings": [{ "type": "text", "id": "text", "label": "Text", "default": "ترطيب" }]
+    }
+  ],
+  "presets": [
+    { "name": "Scrolling words", "blocks": [{ "type": "word" }, { "type": "word" }, { "type": "word" }] }
+  ]
+}
+{% endschema %}

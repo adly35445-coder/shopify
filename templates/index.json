@@ -109,7 +109,7 @@
         "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60,
-        "pattern": "florals",
+        "pattern": "none",
         "button_tint": "#E8641B"
       }
     },
@@ -137,8 +137,9 @@
         "color_scheme": "scheme-1",
         "padding_top": 20,
         "padding_bottom": 60,
-        "pattern": "leaves",
-        "button_tint": "#6E3FC4"
+        "pattern": "none",
+        "button_tint": "#6E3FC4",
+        "top_edge": "none"
       }
     },
     "collection": {
@@ -276,7 +277,9 @@
         "padding_bottom": 80,
         "button_label": "اعملي اختبار البشرة",
         "button_link": "",
-        "pattern": "diamonds"
+        "pattern": "none",
+        "top_edge": "wave",
+        "watermark": "SKINCARE"
       }
     },
     "bundles": {
@@ -350,7 +353,8 @@
         "color_scheme": "scheme-1",
         "padding_top": 40,
         "padding_bottom": 60,
-        "pattern": "waves"
+        "pattern": "none",
+        "show_icons": true
       }
     },
     "quiz": {
@@ -366,7 +370,8 @@
         "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60,
-        "pattern": "scallops"
+        "pattern": "none",
+        "top_edge": "none"
       }
     },
     "ritual": {
@@ -464,7 +469,9 @@
         "color_scheme": "scheme-2",
         "padding_top": 80,
         "padding_bottom": 80,
-        "pattern": "damask"
+        "pattern": "none",
+        "watermark": "RITUAL",
+        "top_edge": "wave"
       }
     },
     "reviews": {
@@ -511,7 +518,9 @@
         "padding_top": 60,
         "padding_bottom": 60,
         "subtitle": "اللي بيقولوه عن 4M",
-        "pattern": "fleur"
+        "pattern": "none",
+        "watermark": "LOVE",
+        "top_edge": "wave"
       }
     },
     "ugc": {
@@ -557,7 +566,60 @@
         "color_scheme": "scheme-1",
         "padding_top": 20,
         "padding_bottom": 80,
-        "pattern": "dots"
+        "pattern": "none"
+      }
+    },
+    "marquee": {
+      "type": "marquee",
+      "blocks": {
+        "w0": {
+          "type": "word",
+          "settings": {
+            "text": "ترطيب"
+          }
+        },
+        "w1": {
+          "type": "word",
+          "settings": {
+            "text": "حماية من الشمس"
+          }
+        },
+        "w2": {
+          "type": "word",
+          "settings": {
+            "text": "تنظيف عميق"
+          }
+        },
+        "w3": {
+          "type": "word",
+          "settings": {
+            "text": "صُنع في مصر"
+          }
+        },
+        "w4": {
+          "type": "word",
+          "settings": {
+            "text": "مكونات آمنة"
+          }
+        },
+        "w5": {
+          "type": "word",
+          "settings": {
+            "text": "شحن لكل مصر"
+          }
+        }
+      },
+      "block_order": [
+        "w0",
+        "w1",
+        "w2",
+        "w3",
+        "w4",
+        "w5"
+      ],
+      "settings": {
+        "speed": 28,
+        "color_scheme": "scheme-4"
       }
     }
   },
@@ -565,6 +627,7 @@
     "hero",
     "new_arrival",
     "feature_2",
+    "marquee",
     "collection",
     "about",
     "skin_concerns",
