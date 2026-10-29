@@ -42,7 +42,9 @@
   -%}
 
   <product-component view-event-payload="{{ card_product | standard_event_data: 'view', context: product_view_context | escape }}">
-    <div class="card-wrapper product-card-wrapper underline-links-hover">
+    {%- capture tint_text -%}{{ card_product.handle }} {{ card_product.title }} {{ card_product.type }}{%- endcapture -%}
+    {%- capture tint -%}{%- render 'product-tint', text: tint_text -%}{%- endcapture -%}
+    <div class="card-wrapper product-card-wrapper underline-links-hover{% if tint != blank %} has-tint-card" style="--tint: {{ tint }}{% endif %}">
       <div
         class="
           card card--{{ settings.card_style }}

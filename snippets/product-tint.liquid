@@ -1,0 +1,18 @@
+{%- comment -%}
+  Outputs the product's own colour, used to tint its button on tap/hover.
+  Accepts: text (string) - product handle + title to look for keywords in
+{%- endcomment -%}
+{%- liquid
+  assign t = text | downcase
+  if t contains 'lotion' or t contains 'لوشن'
+    echo '#1F1A17'
+  elsif t contains 'sunscreen' or t contains 'spf' or t contains 'صن' or t contains 'شمس'
+    echo '#E8641B'
+  elsif t contains 'whiten' or t contains 'تفتيح'
+    echo '#5FA8E0'
+  elsif t contains 'cleanser' or t contains 'غسول'
+    echo '#6E3FC4'
+  elsif t contains 'moistur' or t contains 'ترطيب' or t contains 'مرطب'
+    echo '#A0718E'
+  endif
+-%}

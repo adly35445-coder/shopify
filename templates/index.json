@@ -20,7 +20,9 @@
             "mock_cap": "#E85D0F",
             "mock_body": "#FFFFFF",
             "mock_ink": "#8B6656",
-            "mock_label": "Sunscreen"
+            "mock_label": "Sunscreen",
+            "pattern": "sparkles",
+            "button_tint": "#E8641B"
           }
         },
         "slide_2": {
@@ -40,7 +42,9 @@
             "mock_cap": "#2B2420",
             "mock_body": "#2B2420",
             "mock_ink": "#FFFFFF",
-            "mock_label": "Lotion"
+            "mock_label": "Lotion",
+            "pattern": "sparkles",
+            "button_tint": "#A0718E"
           }
         },
         "slide_3": {
@@ -60,7 +64,9 @@
             "mock_cap": "#6B3FC9",
             "mock_body": "#FFFFFF",
             "mock_ink": "#8B6656",
-            "mock_label": "Cleanser"
+            "mock_label": "Cleanser",
+            "pattern": "sparkles",
+            "button_tint": "#6E3FC4"
           }
         }
       },
@@ -102,7 +108,9 @@
         "full_width": false,
         "color_scheme": "scheme-1",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "pattern": "florals",
+        "button_tint": "#E8641B"
       }
     },
     "feature_2": {
@@ -128,7 +136,9 @@
         "full_width": false,
         "color_scheme": "scheme-1",
         "padding_top": 20,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "pattern": "leaves",
+        "button_tint": "#6E3FC4"
       }
     },
     "collection": {
@@ -182,7 +192,8 @@
         "full_width": true,
         "color_scheme": "scheme-1",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "pattern": "stars8-light"
       }
     },
     "skin_concerns": {
@@ -264,7 +275,8 @@
         "padding_top": 80,
         "padding_bottom": 80,
         "button_label": "اعملي اختبار البشرة",
-        "button_link": ""
+        "button_link": "",
+        "pattern": "diamonds"
       }
     },
     "bundles": {
@@ -337,7 +349,8 @@
         "handle": "",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "pattern": "waves"
       }
     },
     "quiz": {
@@ -352,7 +365,8 @@
         "button_link": "",
         "color_scheme": "scheme-1",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "pattern": "scallops"
       }
     },
     "ritual": {
@@ -369,7 +383,8 @@
             "mock_body": "#FFFFFF",
             "mock_ink": "#8B6656",
             "mock_label": "Cleanser",
-            "accent": "#8B6656"
+            "accent": "#8B6656",
+            "button_tint": "#6E3FC4"
           }
         },
         "step_2": {
@@ -383,7 +398,8 @@
             "mock_body": "#FFFFFF",
             "mock_ink": "#8B6656",
             "mock_label": "Whitening",
-            "accent": "#8B6656"
+            "accent": "#8B6656",
+            "button_tint": "#5FA8E0"
           }
         },
         "step_3": {
@@ -397,7 +413,8 @@
             "mock_body": "#2B2420",
             "mock_ink": "#FFFFFF",
             "mock_label": "Lotion",
-            "accent": "#8B6656"
+            "accent": "#8B6656",
+            "button_tint": "#A0718E"
           }
         },
         "step_4": {
@@ -411,7 +428,8 @@
             "mock_body": "#FFFFFF",
             "mock_ink": "#8B6656",
             "mock_label": "Sunscreen",
-            "accent": "#8B6656"
+            "accent": "#8B6656",
+            "button_tint": "#E8641B"
           }
         },
         "step_5": {
@@ -445,7 +463,8 @@
         "step_button_label": "تسوّقي الخطوة دي",
         "color_scheme": "scheme-2",
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "pattern": "damask"
       }
     },
     "reviews": {
@@ -491,7 +510,8 @@
         "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60,
-        "subtitle": "اللي بيقولوه عن 4M"
+        "subtitle": "اللي بيقولوه عن 4M",
+        "pattern": "fleur"
       }
     },
     "ugc": {
@@ -536,7 +556,8 @@
         "handle": "@4mcosmetics",
         "color_scheme": "scheme-1",
         "padding_top": 20,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "pattern": "dots"
       }
     }
   },

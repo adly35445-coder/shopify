@@ -12,7 +12,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<div class="color-{{ section.settings.color_scheme }} gradient pattern-{{ section.settings.pattern }} section-{{ section.id }}-padding">
   <div class="feature-split feature-split--{{ section.settings.layout }} feature-split--heading-{{ section.settings.heading_style }}{% if section.settings.layout == 'text_first' %} feature-split--reverse{% endif %}{% if section.settings.full_width == false %} page-width{% endif %}">
     <div
       class="feature-split__media{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
@@ -58,7 +58,7 @@
           {% else %}
             role="link" aria-disabled="true"
           {% endif %}
-          class="{% if section.settings.button_style == 'link' %}brand-link{% else %}button button--primary{% endif %}"
+          class="{% if section.settings.button_style == 'link' %}brand-link{% else %}button button--primary{% endif %}{% if section.settings.button_tint != blank %} has-tint" style="--tint: {{ section.settings.button_tint }}{% endif %}"
         >
           {{- section.settings.button_label | escape -}}
         </a>
@@ -118,6 +118,7 @@
     { "type": "richtext", "id": "text", "label": "Text", "default": "<p>اكتب هنا وصف قصير للمنتج</p>" },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "اكتشفيه" },
     { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "color", "id": "button_tint", "label": "Button colour on tap", "info": "Product colour the button turns when tapped" },
     {
       "type": "select",
       "id": "button_style",
@@ -140,6 +141,7 @@
       "default": "image_first"
     },
     { "type": "checkbox", "id": "full_width", "label": "Full width", "default": true },
+    { "type": "select", "id": "pattern", "label": "Background pattern", "default": "none", "options": [{ "value": "none", "label": "None" }, { "value": "sparkles", "label": "Sparkles" }, { "value": "florals", "label": "Florals" }, { "value": "leaves", "label": "Leaves" }, { "value": "circles", "label": "Circles" }, { "value": "diamonds", "label": "Diamonds" }, { "value": "chevrons", "label": "Chevrons" }, { "value": "waves", "label": "Waves" }, { "value": "scallops", "label": "Scallops" }, { "value": "damask", "label": "Damask" }, { "value": "fleur", "label": "Fleur" }, { "value": "dots", "label": "Dots" }, { "value": "stars8", "label": "Stars8" }, { "value": "stars8-light", "label": "Stars8 light" }] },
     { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 0 },
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 0 }

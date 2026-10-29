@@ -61,7 +61,7 @@
               }}
             {%- endif -%}
           {%- else -%}
-            <div class="hero-slider__placeholder" style="--accent: {{ block.settings.accent }}; --disc: {{ block.settings.mock_cap }}">
+            <div class="hero-slider__placeholder pattern-{{ block.settings.pattern }}" style="--accent: {{ block.settings.accent }}; --disc: {{ block.settings.mock_cap }}">
               {%- if block.settings.mock_kind != 'none' -%}
                 <div class="hero-slider__mock">
                   <span class="hero-slider__disc"></span>
@@ -91,7 +91,7 @@
                   {% else %}
                     role="link" aria-disabled="true"
                   {% endif %}
-                  class="button button--primary"
+                  class="button button--primary{% if block.settings.button_tint != blank %} has-tint" style="--tint: {{ block.settings.button_tint }}{% endif %}"
                 >
                   {{- block.settings.button_label | escape -}}
                 </a>
@@ -182,6 +182,7 @@
         { "type": "richtext", "id": "text", "label": "Text", "default": "<p>عناية يومية بتركيبات آمنة ومدروسة</p>" },
         { "type": "text", "id": "button_label", "label": "Button 1 label", "default": "تسوّقي الآن" },
         { "type": "url", "id": "button_link", "label": "Button 1 link" },
+        { "type": "color", "id": "button_tint", "label": "Button colour on tap" },
         { "type": "text", "id": "button_label_2", "label": "Button 2 label" },
         { "type": "url", "id": "button_link_2", "label": "Button 2 link" },
         {
@@ -195,6 +196,7 @@
           ],
           "default": "start"
         },
+        { "type": "select", "id": "pattern", "label": "Background pattern", "default": "none", "options": [{ "value": "none", "label": "None" }, { "value": "sparkles", "label": "Sparkles" }, { "value": "florals", "label": "Florals" }, { "value": "leaves", "label": "Leaves" }, { "value": "circles", "label": "Circles" }, { "value": "diamonds", "label": "Diamonds" }, { "value": "chevrons", "label": "Chevrons" }, { "value": "waves", "label": "Waves" }, { "value": "scallops", "label": "Scallops" }, { "value": "damask", "label": "Damask" }, { "value": "fleur", "label": "Fleur" }, { "value": "dots", "label": "Dots" }, { "value": "stars8", "label": "Stars8" }, { "value": "stars8-light", "label": "Stars8 light" }] },
         { "type": "color_scheme", "id": "color_scheme", "label": "Text color scheme", "default": "scheme-1" }
       ]
     }
