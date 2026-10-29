@@ -158,8 +158,8 @@
 .hero-slider__eyebrow {
   margin: 0;
   font-family: var(--font-caps-family, sans-serif);
-  font-size: 1.6rem;
-  letter-spacing: 0.6rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.4rem;
   text-transform: uppercase;
   font-weight: 700;
   color: rgb(var(--color-foreground));
@@ -169,18 +169,18 @@
 .hero-slider__heading {
   margin: 1.6rem 0 0.8rem;
   font-family: var(--font-script-family, serif);
-  font-weight: 400;
-  line-height: 1.5;
+  font-weight: 600;
+  line-height: 1.3;
   color: rgb(var(--color-foreground));
 }
 
 .hero-slider__text {
-  font-family: var(--font-caps-family, sans-serif);
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.35rem;
-  text-transform: uppercase;
-  margin-bottom: 2.4rem;
+  font-family: var(--font-body-family, sans-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.8;
+  max-width: 34rem;
+  margin: 0 auto 2.4rem;
 }
 
 .hero-slider__text p { margin: 0; }
@@ -192,13 +192,13 @@
 
 @media screen and (min-width: 750px) {
   .hero-slider__content { padding-bottom: 9rem; }
-  .hero-slider__eyebrow { font-size: 2.2rem; letter-spacing: 0.9rem; }
-  .hero-slider__heading.h0 { font-size: 8.4rem; }
-  .hero-slider__text { font-size: 1.4rem; }
+  .hero-slider__eyebrow { font-size: 1.6rem; letter-spacing: 0.6rem; }
+  .hero-slider__heading.h0 { font-size: 6.4rem; }
+  .hero-slider__text { font-size: 1.8rem; max-width: 44rem; }
 }
 
 @media screen and (max-width: 749px) {
-  .hero-slider__heading.h0 { font-size: 4.6rem; }
+  .hero-slider__heading.h0 { font-size: 4rem; }
 }
 
 .hero-slider__buttons {
@@ -214,10 +214,10 @@
   background: transparent;
   color: rgb(var(--color-foreground));
   border: 0.15rem solid rgb(var(--color-foreground));
-  font-family: var(--font-caps-family, sans-serif);
-  letter-spacing: 0.3rem;
-  text-transform: uppercase;
-  font-size: 1.3rem;
+  font-family: var(--font-body-family, sans-serif);
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  font-size: 1.6rem;
   min-width: 22rem;
 }
 

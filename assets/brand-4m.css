@@ -9,7 +9,7 @@
   --brand-blush: #fbede3;
   --brand-mauve: #a0705c;
   --brand-orange: #e85d0f;
-  --font-script-family: 'Pinyon Script', 'Aref Ruqaa', serif;
+  --font-script-family: 'Alexandria', 'Tajawal', sans-serif;
   --font-caps-family: 'Montserrat', 'Tajawal', sans-serif;
 }
 
@@ -42,7 +42,7 @@ body {
 .brand-heading .title,
 .brand-script {
   font-family: var(--font-script-family);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0;
   line-height: 1.25;
 }
@@ -289,7 +289,7 @@ body {
 
 .feature-split--heading-script .feature-split__heading {
   font-family: var(--font-script-family);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .feature-split__subheading {
@@ -364,7 +364,7 @@ body {
 
 .feature-split--overlay .feature-split__heading {
   font-family: var(--font-script-family);
-  font-weight: 400;
+  font-weight: 600;
   text-transform: none;
   font-size: 5.2rem;
 }
@@ -755,7 +755,7 @@ body {
 .promo-banner__heading {
   margin: 0 0 1.6rem;
   font-family: var(--font-script-family);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.2;
 }
 

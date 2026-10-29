@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="js" lang="{{ request.locale.iso_code }}" dir="{% if request.locale.iso_code == 'ar' %}rtl{% else %}ltr{% endif %}">
+<html class="js" lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -283,12 +283,12 @@
     {%- if settings.use_cairo_font -%}
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Pinyon+Script&family=Noto+Naskh+Arabic:wght@400;500;600&family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
       <style>
         :root {
-          --font-body-family: 'Noto Naskh Arabic', Georgia, serif;
-          --font-heading-family: 'Noto Naskh Arabic', Georgia, serif;
-          --font-script-family: 'Pinyon Script', 'Aref Ruqaa', serif;
+          --font-body-family: 'Tajawal', sans-serif;
+          --font-heading-family: 'Alexandria', 'Tajawal', sans-serif;
+          --font-script-family: 'Alexandria', 'Tajawal', sans-serif;
           --font-caps-family: 'Montserrat', 'Tajawal', sans-serif;
           --font-body-weight: 400;
           --font-body-weight-bold: 600;
