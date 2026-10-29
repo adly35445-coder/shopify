@@ -22,7 +22,8 @@
             "mock_ink": "#8B6656",
             "mock_label": "Sunscreen",
             "pattern": "sparkles",
-            "button_tint": "#E8641B"
+            "button_tint": "#E8641B",
+            "image": "shopify://shop_images/4m-sunscreen-light.jpg"
           }
         },
         "slide_2": {
@@ -44,7 +45,8 @@
             "mock_ink": "#FFFFFF",
             "mock_label": "Lotion",
             "pattern": "sparkles",
-            "button_tint": "#A0718E"
+            "button_tint": "#A0718E",
+            "image": "shopify://shop_images/4m-cleanser-lotion-duo.jpg"
           }
         },
         "slide_3": {
@@ -66,7 +68,8 @@
             "mock_ink": "#8B6656",
             "mock_label": "Cleanser",
             "pattern": "sparkles",
-            "button_tint": "#6E3FC4"
+            "button_tint": "#6E3FC4",
+            "image": "shopify://shop_images/4m-cleanser-bathroom.jpg"
           }
         }
       },
@@ -110,7 +113,8 @@
         "padding_top": 60,
         "padding_bottom": 60,
         "pattern": "none",
-        "button_tint": "#E8641B"
+        "button_tint": "#E8641B",
+        "image": "shopify://shop_images/4m-sunscreen-eucalyptus.jpg"
       }
     },
     "feature_2": {
@@ -139,7 +143,8 @@
         "padding_bottom": 60,
         "pattern": "none",
         "button_tint": "#6E3FC4",
-        "top_edge": "none"
+        "top_edge": "none",
+        "image": "shopify://shop_images/4m-cleanser-hand.jpg"
       }
     },
     "collection": {
@@ -194,7 +199,8 @@
         "color_scheme": "scheme-1",
         "padding_top": 0,
         "padding_bottom": 0,
-        "pattern": "stars8-light"
+        "pattern": "none",
+        "image": "shopify://shop_images/4m-cleanser-lotion-bag.jpg"
       }
     },
     "skin_concerns": {
@@ -212,7 +218,8 @@
             "mock_cap": "#2A1660",
             "mock_body": "#FFFFFF",
             "mock_ink": "#2B2420",
-            "mock_label": "Cleanser"
+            "mock_label": "Cleanser",
+            "image": "shopify://shop_images/4m-cleanser-lavender.jpg"
           }
         },
         "concern_2": {
@@ -227,7 +234,8 @@
             "mock_cap": "#2B2420",
             "mock_body": "#2B2420",
             "mock_ink": "#FFFFFF",
-            "mock_label": "Lotion"
+            "mock_label": "Lotion",
+            "image": "shopify://shop_images/4m-lotion-eucalyptus.jpg"
           }
         },
         "concern_3": {
@@ -242,7 +250,8 @@
             "mock_cap": "#173F86",
             "mock_body": "#FFFFFF",
             "mock_ink": "#2B2420",
-            "mock_label": "Whitening"
+            "mock_label": "Whitening",
+            "image": "shopify://shop_images/4m-whitening-cream.jpg"
           }
         },
         "concern_4": {
@@ -257,7 +266,8 @@
             "mock_cap": "#7A2C04",
             "mock_body": "#FFFFFF",
             "mock_ink": "#2B2420",
-            "mock_label": "Sunscreen"
+            "mock_label": "Sunscreen",
+            "image": "shopify://shop_images/4m-sunscreen-light.jpg"
           }
         }
       },
@@ -316,25 +326,29 @@
         "h1": {
           "type": "photo",
           "settings": {
-            "accent": "#F6E9DE"
+            "accent": "#F6E9DE",
+            "image": "shopify://shop_images/4m-lotion-eucalyptus.jpg"
           }
         },
         "h2": {
           "type": "photo",
           "settings": {
-            "accent": "#FBE3D3"
+            "accent": "#FBE3D3",
+            "image": "shopify://shop_images/4m-cleanser-lotion-duo.jpg"
           }
         },
         "h3": {
           "type": "photo",
           "settings": {
-            "accent": "#FBE3D3"
+            "accent": "#FBE3D3",
+            "image": "shopify://shop_images/4m-cleanser-lotion-bag.jpg"
           }
         },
         "h4": {
           "type": "photo",
           "settings": {
-            "accent": "#F6E9DE"
+            "accent": "#F6E9DE",
+            "image": "shopify://shop_images/4m-cleanser-hand.jpg"
           }
         }
       },
@@ -371,7 +385,8 @@
         "padding_top": 60,
         "padding_bottom": 60,
         "pattern": "none",
-        "top_edge": "none"
+        "top_edge": "none",
+        "image": "shopify://shop_images/4m-cleanser-lavender.jpg"
       }
     },
     "ritual": {
@@ -389,7 +404,8 @@
             "mock_ink": "#8B6656",
             "mock_label": "Cleanser",
             "accent": "#8B6656",
-            "button_tint": "#6E3FC4"
+            "button_tint": "#6E3FC4",
+            "image": "shopify://shop_images/4m-cleanser-lavender.jpg"
           }
         },
         "step_2": {
@@ -404,7 +420,8 @@
             "mock_ink": "#8B6656",
             "mock_label": "Whitening",
             "accent": "#8B6656",
-            "button_tint": "#5FA8E0"
+            "button_tint": "#5FA8E0",
+            "image": "shopify://shop_images/4m-whitening-cream.jpg"
           }
         },
         "step_3": {
@@ -419,7 +436,8 @@
             "mock_ink": "#FFFFFF",
             "mock_label": "Lotion",
             "accent": "#8B6656",
-            "button_tint": "#A0718E"
+            "button_tint": "#A0718E",
+            "image": "shopify://shop_images/4m-lotion-eucalyptus.jpg"
           }
         },
         "step_4": {
@@ -434,7 +452,8 @@
             "mock_ink": "#8B6656",
             "mock_label": "Sunscreen",
             "accent": "#8B6656",
-            "button_tint": "#E8641B"
+            "button_tint": "#E8641B",
+            "image": "shopify://shop_images/4m-sunscreen-eucalyptus.jpg"
           }
         },
         "step_5": {
@@ -529,25 +548,29 @@
         "p1": {
           "type": "photo",
           "settings": {
-            "accent": "#FBE3D3"
+            "accent": "#FBE3D3",
+            "image": "shopify://shop_images/4m-cleanser-bathroom.jpg"
           }
         },
         "p2": {
           "type": "photo",
           "settings": {
-            "accent": "#F6E9DE"
+            "accent": "#F6E9DE",
+            "image": "shopify://shop_images/4m-sunscreen-eucalyptus.jpg"
           }
         },
         "p3": {
           "type": "photo",
           "settings": {
-            "accent": "#EFE4F4"
+            "accent": "#EFE4F4",
+            "image": "shopify://shop_images/4m-whitening-cream.jpg"
           }
         },
         "p4": {
           "type": "photo",
           "settings": {
-            "accent": "#FBE3D3"
+            "accent": "#FBE3D3",
+            "image": "shopify://shop_images/4m-cleanser-lavender.jpg"
           }
         }
       },

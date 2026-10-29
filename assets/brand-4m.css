@@ -340,7 +340,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(30, 20, 15, 0.35);
+  background: rgba(30, 20, 15, 0.5);
 }
 
 .feature-split--overlay .feature-split__badge {
@@ -572,9 +572,9 @@ body {
 }
 
 .routine-step__media img {
-  max-height: 100%;
-  width: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .routine-step__product {

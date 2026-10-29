@@ -344,3 +344,27 @@
   .hero-slider__text,
   .hero-slider__buttons { opacity: 1; transform: none; animation: none !important; }
 }
+
+/* Real photos: fade the photo into the page colour so the text below stays easy to read */
+.hero-slider__media:has(img)::after {
+  background: linear-gradient(to bottom, transparent 35%, rgb(var(--color-background)) 92%);
+  opacity: 1;
+}
+
+.hero-slider__media img {
+  object-position: center 30%;
+}
+
+@media screen and (max-width: 749px) {
+  .hero-slider__media:has(img) {
+    bottom: 32%;
+  }
+
+  .hero-slider__media:has(img)::after {
+    background: linear-gradient(to bottom, transparent 60%, rgb(var(--color-background)) 100%);
+  }
+
+  .hero-slider__media img {
+    object-position: center 40%;
+  }
+}
