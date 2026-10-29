@@ -46,7 +46,7 @@
             {%- elsif product != blank and product.featured_media != blank -%}
               {{ product.featured_media | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 700, 900', sizes: '(min-width: 750px) 40vw, 70vw', alt: name }}
             {%- else -%}
-              {%- render 'product-mock', kind: block.settings.mock_kind, cap: block.settings.mock_cap, body: block.settings.mock_body, ink: block.settings.mock_ink, label: block.settings.mock_label, size: 'lg' -%}
+              {%- render 'product-mock', kind: block.settings.mock_kind, cap: block.settings.mock_cap, body: block.settings.mock_body, ink: block.settings.mock_ink, label: block.settings.mock_label, size: 'md' -%}
             {%- endif -%}
           </div>
 

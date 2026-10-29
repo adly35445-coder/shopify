@@ -621,6 +621,88 @@
         "speed": 28,
         "color_scheme": "scheme-4"
       }
+    },
+    "spotlight": {
+      "type": "product-spotlight",
+      "blocks": {
+        "cleanser": {
+          "type": "item",
+          "settings": {
+            "name": "غسول 4M جل",
+            "background": "#CDCCE9",
+            "mock_kind": "bottle",
+            "mock_cap": "#6E3FC4",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#6E3FC4",
+            "mock_label": "Cleanser",
+            "image": "shopify://shop_images/4m-cleanser-cutout.png"
+          }
+        },
+        "sunscreen": {
+          "type": "item",
+          "settings": {
+            "name": "صن سكرين SPF 50+",
+            "background": "#F3DCCB",
+            "mock_kind": "bottle",
+            "mock_cap": "#E8641B",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#E8641B",
+            "mock_label": "Sunscreen"
+          }
+        },
+        "lotion": {
+          "type": "item",
+          "settings": {
+            "name": "لوشن الترطيب",
+            "background": "#E4DFDA",
+            "mock_kind": "bottle",
+            "mock_cap": "#1F1A17",
+            "mock_body": "#1F1A17",
+            "mock_ink": "#FFFFFF",
+            "mock_label": "Lotion"
+          }
+        },
+        "whitening": {
+          "type": "item",
+          "settings": {
+            "name": "كريم التفتيح",
+            "background": "#D5E4F2",
+            "mock_kind": "jar",
+            "mock_cap": "#5FA8E0",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#5FA8E0",
+            "mock_label": "Whitening"
+          }
+        },
+        "lipbalm": {
+          "type": "item",
+          "settings": {
+            "name": "ليب بالم",
+            "background": "#F1D6D9",
+            "mock_kind": "jar",
+            "mock_cap": "#C8323C",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#C8323C",
+            "mock_label": "Lip Balm"
+          }
+        }
+      },
+      "block_order": [
+        "cleanser",
+        "sunscreen",
+        "lotion",
+        "whitening",
+        "lipbalm"
+      ],
+      "settings": {
+        "title": "لاقي روتينك",
+        "subtitle": "خمس منتجات. بشرة صحية ومنوّرة.",
+        "text_color": "#3F3550",
+        "button_label": "أضيفي للسلة",
+        "more_label": "اعرفي أكتر ←",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
     }
   },
   "order": [
@@ -628,6 +710,7 @@
     "new_arrival",
     "feature_2",
     "marquee",
+    "spotlight",
     "collection",
     "about",
     "skin_concerns",
