@@ -1477,7 +1477,7 @@
       {
         "type": "checkbox",
         "id": "use_cairo_font",
-        "label": "Use Cairo font (Arabic + English)",
+        "label": "Use 4M fonts (Ruqaa script titles + Naskh text)",
         "default": true
       },
       {

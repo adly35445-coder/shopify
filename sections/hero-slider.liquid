@@ -61,8 +61,13 @@
               }}
             {%- endif -%}
           {%- else -%}
-            <div class="hero-slider__placeholder" style="--accent: {{ block.settings.accent }}">
-              {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            <div class="hero-slider__placeholder" style="--accent: {{ block.settings.accent }}; --disc: {{ block.settings.mock_cap }}">
+              {%- if block.settings.mock_kind != 'none' -%}
+                <div class="hero-slider__mock">
+                  <span class="hero-slider__disc"></span>
+                  {%- render 'product-mock', kind: block.settings.mock_kind, cap: block.settings.mock_cap, body: block.settings.mock_body, ink: block.settings.mock_ink, label: block.settings.mock_label, size: 'lg' -%}
+                </div>
+              {%- endif -%}
             </div>
           {%- endif -%}
         </div>
@@ -157,6 +162,21 @@
         { "type": "image_picker", "id": "image", "label": "Image (desktop)", "info": "Wide image, 1920 × 1080 px or larger" },
         { "type": "image_picker", "id": "image_mobile", "label": "Image (mobile, optional)", "info": "Tall image, 1080 × 1350 px" },
         { "type": "color", "id": "accent", "label": "Placeholder color (shown until you add an image)", "default": "#F8F2EB" },
+        {
+          "type": "select",
+          "id": "mock_kind",
+          "label": "Drawn product (shown until you add an image)",
+          "options": [
+            { "value": "bottle", "label": "Bottle" },
+            { "value": "jar", "label": "Jar" },
+            { "value": "none", "label": "None" }
+          ],
+          "default": "bottle"
+        },
+        { "type": "color", "id": "mock_cap", "label": "Drawn product cap color", "default": "#E85D0F" },
+        { "type": "color", "id": "mock_body", "label": "Drawn product body color", "default": "#FFFFFF" },
+        { "type": "color", "id": "mock_ink", "label": "Drawn product text color", "default": "#2B2420" },
+        { "type": "text", "id": "mock_label", "label": "Drawn product label", "default": "Sunscreen" },
         { "type": "text", "id": "subheading", "label": "Small text above heading", "default": "4M Cosmetics" },
         { "type": "text", "id": "heading", "label": "Heading", "default": "بشرتك تستحق الأفضل" },
         { "type": "richtext", "id": "text", "label": "Text", "default": "<p>عناية يومية بتركيبات آمنة ومدروسة</p>" },

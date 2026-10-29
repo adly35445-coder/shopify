@@ -1,0 +1,94 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- capture heading -%}
+  <div class="brand-heading center ugc-gallery__heading">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="brand-eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    {%- if section.settings.title != blank -%}
+      <h2 class="title h1">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <p class="brand-subtitle">{{ section.settings.text }}</p>
+    {%- endif -%}
+    {%- if section.settings.handle != blank -%}
+      <p class="brand-subtitle">
+        {%- if section.settings.handle_link != blank -%}
+          <a class="brand-link" href="{{ section.settings.handle_link }}" target="_blank" rel="noopener">{{ section.settings.handle }}</a>
+        {%- else -%}
+          {{ section.settings.handle }}
+        {%- endif -%}
+      </p>
+    {%- endif -%}
+  </div>
+{%- endcapture -%}
+
+{%- capture photos_before -%}
+  {%- for block in section.blocks limit: section.settings.heading_after -%}
+    {%- render 'framed-photo', block: block -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- capture photos_after -%}
+  {%- for block in section.blocks offset: section.settings.heading_after -%}
+    {%- render 'framed-photo', block: block -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- if photos_before != blank -%}
+    <ul class="ugc-gallery" role="list">{{ photos_before }}</ul>
+  {%- endif -%}
+  {{ heading }}
+  {%- if photos_after != blank -%}
+    <ul class="ugc-gallery" role="list">{{ photos_after }}</ul>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Framed photo collage",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 10,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small text above heading", "default": "AS SEEN ON YOU" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "4M عليكي" },
+    { "type": "text", "id": "text", "label": "Text under heading" },
+    { "type": "range", "id": "heading_after", "min": 0, "max": 6, "step": 1, "label": "Show heading after this many photos", "default": 2 },
+    { "type": "text", "id": "handle", "label": "Instagram handle", "default": "@4mcosmetics" },
+    { "type": "url", "id": "handle_link", "label": "Instagram link" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 60 }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Photo",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "color", "id": "accent", "label": "Placeholder color", "default": "#F3E9DD" },
+        { "type": "url", "id": "link", "label": "Link (e.g. Instagram post)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Framed photo collage",
+      "blocks": [{ "type": "photo" }, { "type": "photo" }, { "type": "photo" }, { "type": "photo" }, { "type": "photo" }]
+    }
+  ]
+}
+{% endschema %}

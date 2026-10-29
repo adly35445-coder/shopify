@@ -1,0 +1,20 @@
+{%- comment -%}
+  Drawn 4M product used as a stand-in until real photos are uploaded.
+  Accepts: kind ('bottle' | 'jar'), cap, body, ink, label, size ('sm' | 'md' | 'lg')
+{%- endcomment -%}
+{%- liquid
+  assign kind = kind | default: 'bottle'
+  assign cap = cap | default: '#2B2420'
+  assign body = body | default: '#FFFFFF'
+  assign ink = ink | default: '#2B2420'
+  assign size = size | default: 'md'
+-%}
+<div class="pmock pmock--{{ kind }} pmock--{{ size }}" style="--pm-cap: {{ cap }}; --pm-body: {{ body }}; --pm-ink: {{ ink }};" aria-hidden="true">
+  {%- if kind == 'jar' -%}
+    <span class="pmock__lid"></span>
+    <span class="pmock__body"><b>4M</b><i>{{ label }}</i></span>
+  {%- else -%}
+    <span class="pmock__cap"></span>
+    <span class="pmock__body"><b>4M</b><span class="pmock__line"></span><i>{{ label }}</i></span>
+  {%- endif -%}
+</div>

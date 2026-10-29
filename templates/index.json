@@ -7,45 +7,60 @@
           "type": "slide",
           "settings": {
             "subheading": "4M SUNSCREEN",
-            "heading": "مع حرارة الصيف… ميتنزلش من غير صن سكرين",
-            "text": "<p>حماية SPF 50+ خفيفة ومن غير وايت كاست</p>",
-            "button_label": "تسوّقي الصن سكرين",
+            "heading": "درعك ضد الشمس",
+            "text": "<p>حماية SPF 50+ خفيفة ومن غير أثر أبيض</p>",
+            "button_label": "تسوّقي الآن",
             "button_link": "shopify://collections/all",
             "button_label_2": "",
             "button_link_2": "",
-            "text_position": "start",
+            "text_position": "center",
             "color_scheme": "scheme-1",
-            "accent": "#FDEBDD"
+            "accent": "#FBE3D3",
+            "mock_kind": "bottle",
+            "mock_cap": "#E85D0F",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#8B6656",
+            "mock_label": "Sunscreen"
           }
         },
         "slide_2": {
           "type": "slide",
           "settings": {
-            "subheading": "4M COSMETICS",
-            "heading": "صيفك… فرصتك لبشرة صحية",
-            "text": "<p>خصم على كل المنتجات لفترة محدودة</p>",
-            "button_label": "تسوّقي العروض",
+            "subheading": "4M MOISTURIZER",
+            "heading": "ترطيب يدوم",
+            "text": "<p>هيالورونيك + نياسيناميد + سيراميد</p>",
+            "button_label": "اكتشفيه",
             "button_link": "shopify://collections/all",
             "button_label_2": "",
             "button_link_2": "",
-            "text_position": "start",
+            "text_position": "center",
             "color_scheme": "scheme-1",
-            "accent": "#F8F2EB"
+            "accent": "#F6E9DE",
+            "mock_kind": "bottle",
+            "mock_cap": "#2B2420",
+            "mock_body": "#2B2420",
+            "mock_ink": "#FFFFFF",
+            "mock_label": "Lotion"
           }
         },
         "slide_3": {
           "type": "slide",
           "settings": {
-            "subheading": "4M ROUTINE",
-            "heading": "روتين كامل في 3 خطوات",
-            "text": "<p>تنظيف، ترطيب، حماية… وبشرتك تفرق</p>",
-            "button_label": "اكتشفي الروتين",
+            "subheading": "4M CLEANSER",
+            "heading": "بشرة نضيفة ومرتاحة",
+            "text": "<p>جل غسول بزيت شجرة الشاي للبشرة الدهنية</p>",
+            "button_label": "تسوّقي الغسول",
             "button_link": "shopify://collections/all",
             "button_label_2": "",
             "button_link_2": "",
-            "text_position": "start",
+            "text_position": "center",
             "color_scheme": "scheme-1",
-            "accent": "#EFE7FF"
+            "accent": "#EFE4F4",
+            "mock_kind": "bottle",
+            "mock_cap": "#6B3FC9",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#8B6656",
+            "mock_label": "Cleanser"
           }
         }
       },
@@ -60,36 +75,114 @@
         "speed": 6,
         "zoom": true,
         "overlay_opacity": 0,
-        "height_desktop": 85,
-        "height_mobile": 75
+        "height_desktop": 90,
+        "height_mobile": 80
       }
     },
-    "best_sellers": {
+    "new_arrival": {
+      "type": "feature-split",
+      "settings": {
+        "mock_kind": "bottle",
+        "accent": "#FBE3D3",
+        "mock_cap": "#E85D0F",
+        "mock_body": "#FFFFFF",
+        "mock_ink": "#8B6656",
+        "mock_label": "Sunscreen",
+        "badge": "وصل جديد",
+        "eyebrow": "NEWLY ARRIVED",
+        "heading": "حمايتك اليومية",
+        "heading_style": "bold",
+        "subheading": "SPF 50+ بقوام خفيف زي المية",
+        "heading_size": "h0",
+        "text": "<p>حماية يومية بتحب بشرتك تحت شمس مصر.</p><p>بيتشرب في ثواني، ومن غير أي أثر أبيض أو لزوجة.</p>",
+        "button_label": "تعرّفي على الصن سكرين",
+        "button_link": "shopify://collections/all",
+        "button_style": "button",
+        "layout": "image_first",
+        "full_width": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "feature_2": {
+      "type": "feature-split",
+      "settings": {
+        "mock_kind": "bottle",
+        "accent": "#EFE4F4",
+        "mock_cap": "#6B3FC9",
+        "mock_body": "#FFFFFF",
+        "mock_ink": "#8B6656",
+        "mock_label": "Gel Cleanser",
+        "badge": "",
+        "eyebrow": "THE LATEST ARRIVALS",
+        "heading": "وداعاً للحبوب",
+        "heading_style": "bold",
+        "subheading": "جل غسول رغوي بزيت شجرة الشاي",
+        "heading_size": "h0",
+        "text": "<p>بينضف المسام بعمق ويتحكم في الإفرازات، من غير ما يشد بشرتك أو ينشفها.</p>",
+        "button_label": "تسوّقي الغسول",
+        "button_link": "shopify://collections/all",
+        "button_style": "button",
+        "layout": "image_first",
+        "full_width": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 20,
+        "padding_bottom": 60
+      }
+    },
+    "collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "الأكثر مبيعاً",
+        "title": "مجموعة 4M",
         "heading_size": "h1",
-        "description": "<p>منتجات بتحبها بشرتك</p>",
+        "description": "<p>روتين عناية متكامل بيرجّع لبشرتك نضارتها الطبيعية.</p>",
         "show_description": true,
         "description_style": "body",
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "swipe_on_mobile": true,
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "standard",
         "columns_mobile": "2",
-        "padding_top": 60,
-        "padding_bottom": 48
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "about": {
+      "type": "feature-split",
+      "settings": {
+        "mock_kind": "none",
+        "accent": "#C9A28E",
+        "mock_cap": "#E85D0F",
+        "mock_body": "#FFFFFF",
+        "mock_ink": "#8B6656",
+        "mock_label": "Sunscreen",
+        "badge": "",
+        "eyebrow": "MADE IN EGYPT WITH PRIDE",
+        "heading": "عناية بتفهم بشرتك",
+        "heading_style": "script",
+        "subheading": "",
+        "heading_size": "h0",
+        "text": "<p>منتجات عناية بالبشرة مصنوعة في مصر بمعايير عالمية، علشان تبرز جمالك الطبيعي.</p>",
+        "button_label": "عن 4M",
+        "button_link": "",
+        "button_style": "link",
+        "layout": "overlay",
+        "full_width": true,
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "skin_concerns": {
@@ -99,44 +192,60 @@
           "type": "concern",
           "settings": {
             "title": "بشرة دهنية وحبوب",
-            "text": "تنظيف عميق وتحكم في الإفرازات",
+            "text": "",
             "product_label": "جل الغسول بالتي تري",
-            "emoji": "💧",
             "accent": "#6B3FC9",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/all",
+            "mock_kind": "bottle",
+            "mock_cap": "#2A1660",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#2B2420",
+            "mock_label": "Cleanser"
           }
         },
         "concern_2": {
           "type": "concern",
           "settings": {
             "title": "بشرة جافة",
-            "text": "ترطيب عميق بالهيالورونيك والسيراميد",
+            "text": "",
             "product_label": "اللوشن المرطب",
-            "emoji": "🌿",
-            "accent": "#2B2420",
-            "link": "shopify://collections/all"
+            "accent": "#8B6656",
+            "link": "shopify://collections/all",
+            "mock_kind": "bottle",
+            "mock_cap": "#2B2420",
+            "mock_body": "#2B2420",
+            "mock_ink": "#FFFFFF",
+            "mock_label": "Lotion"
           }
         },
         "concern_3": {
           "type": "concern",
           "settings": {
             "title": "تصبغات وبهتان",
-            "text": "توحيد لون البشرة وتفتيح المناطق الغامقة",
+            "text": "",
             "product_label": "كريم التفتيح",
-            "emoji": "✨",
             "accent": "#2F6FD6",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/all",
+            "mock_kind": "jar",
+            "mock_cap": "#173F86",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#2B2420",
+            "mock_label": "Whitening"
           }
         },
         "concern_4": {
           "type": "concern",
           "settings": {
             "title": "حماية من الشمس",
-            "text": "SPF 50+ ضد أشعة UVA و UVB",
+            "text": "",
             "product_label": "الصن سكرين",
-            "emoji": "☀️",
             "accent": "#E85D0F",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/all",
+            "mock_kind": "bottle",
+            "mock_cap": "#7A2C04",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#2B2420",
+            "mock_label": "Sunscreen"
           }
         }
       },
@@ -147,141 +256,196 @@
         "concern_4"
       ],
       "settings": {
-        "eyebrow": "اعرفي بشرتك",
-        "title": "اختاري مشكلة بشرتك",
-        "subtitle": "وإحنا نقولك المنتج المناسب ليكي",
+        "eyebrow": "",
+        "title": "اختاري احتياج بشرتك",
+        "subtitle": "قوليلنا بشرتك محتاجة إيه، وإحنا نوصلك للروتين المناسب.",
         "heading_size": "h1",
         "color_scheme": "scheme-2",
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "routine": {
-      "type": "routine-steps",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "title": "تنظيف",
-            "text": "اغسلي وشك بجل 4M الغني بالتي تري صباحاً ومساءً",
-            "accent": "#6B3FC9"
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "title": "ترطيب",
-            "text": "وزّعي اللوشن المرطب على بشرة نظيفة",
-            "accent": "#2B2420"
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "title": "حماية",
-            "text": "حطي الصن سكرين كل يوم قبل الخروج بربع ساعة",
-            "accent": "#E85D0F"
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3"
-      ],
-      "settings": {
-        "eyebrow": "روتين 4M",
-        "title": "روتينك اليومي في 3 خطوات",
-        "subtitle": "بسيط، سريع، ونتيجته باينة",
-        "heading_size": "h1",
-        "button_label": "اشتري الروتين كامل",
-        "button_link": "shopify://collections/all",
-        "color_scheme": "scheme-1",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "button_label": "اعملي اختبار البشرة",
+        "button_link": ""
       }
     },
     "bundles": {
       "type": "featured-collection",
       "settings": {
-        "title": "الباندلز والعروض",
+        "title": "خزنة العروض",
         "heading_size": "h1",
-        "description": "<p>روتين كامل بسعر أقل</p>",
+        "description": "<p>باندلز وعروض لفترة محدودة، كل روتينك في مكان واحد.</p>",
         "show_description": true,
         "description_style": "body",
         "collection": "all",
         "products_to_show": 4,
         "columns_desktop": 4,
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "swipe_on_mobile": true,
-        "image_ratio": "square",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "standard",
         "columns_mobile": "2",
-        "padding_top": 60,
+        "padding_top": 80,
         "padding_bottom": 60
       }
     },
-    "about": {
-      "type": "image-with-text",
+    "hydration": {
+      "type": "ugc-gallery",
       "blocks": {
-        "caption": {
-          "type": "caption",
+        "h1": {
+          "type": "photo",
           "settings": {
-            "caption": "عن 4M",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
+            "accent": "#F6E9DE"
           }
         },
-        "heading": {
-          "type": "heading",
+        "h2": {
+          "type": "photo",
           "settings": {
-            "heading": "تصنيع مصري… بمعايير عالمية",
-            "heading_size": "h1"
+            "accent": "#FBE3D3"
           }
         },
-        "text": {
-          "type": "text",
+        "h3": {
+          "type": "photo",
           "settings": {
-            "text": "<p>في 4M بنصنّع كل منتج بنفسنا، بتركيبات مدروسة ومكونات مختارة بعناية، عشان نقدملك عناية يومية آمنة وفعّالة تناسب كل أنواع البشرة.</p>",
-            "text_style": "body"
+            "accent": "#FBE3D3"
           }
         },
-        "button": {
-          "type": "button",
+        "h4": {
+          "type": "photo",
           "settings": {
-            "button_label": "اعرفي أكتر",
-            "button_link": "",
-            "button_style_secondary": true
+            "accent": "#F6E9DE"
           }
         }
       },
       "block_order": [
-        "caption",
-        "heading",
-        "text",
-        "button"
+        "h1",
+        "h2",
+        "h3",
+        "h4"
       ],
       "settings": {
-        "height": "medium",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "center",
-        "mobile_content_alignment": "center",
-        "section_color_scheme": "scheme-2",
-        "color_scheme": "scheme-2",
+        "eyebrow": "",
+        "title": "ترطيب… بشكل جديد",
+        "text": "لوشن مرطب بالهيالورونيك والنياسيناميد والسيراميد لبشرة ناعمة طول اليوم.",
+        "heading_after": 2,
+        "handle": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "quiz": {
+      "type": "promo-banner",
+      "settings": {
+        "show_mocks": true,
+        "accent": "#F3D3BF",
+        "eyebrow": "",
+        "heading": "اكتشفي روتينك المثالي",
+        "text": "<p>جاوبي على كام سؤال بسيط، وخدي روتين متفصّل على بشرتك.</p>",
+        "button_label": "ابدئي الاختبار ←",
+        "button_link": "",
+        "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60
+      }
+    },
+    "ritual": {
+      "type": "routine-steps",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "تنظيف",
+            "product_name": "جل الغسول",
+            "text": "بزيت شجرة الشاي",
+            "mock_kind": "bottle",
+            "mock_cap": "#6B3FC9",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#8B6656",
+            "mock_label": "Cleanser",
+            "accent": "#8B6656"
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "علاج",
+            "product_name": "كريم التفتيح",
+            "text": "لتوحيد لون البشرة",
+            "mock_kind": "jar",
+            "mock_cap": "#2F6FD6",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#8B6656",
+            "mock_label": "Whitening",
+            "accent": "#8B6656"
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "ترطيب",
+            "product_name": "اللوشن المرطب",
+            "text": "هيالورونيك + سيراميد",
+            "mock_kind": "bottle",
+            "mock_cap": "#2B2420",
+            "mock_body": "#2B2420",
+            "mock_ink": "#FFFFFF",
+            "mock_label": "Lotion",
+            "accent": "#8B6656"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "حماية",
+            "product_name": "الصن سكرين",
+            "text": "SPF 50+",
+            "mock_kind": "bottle",
+            "mock_cap": "#E85D0F",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#8B6656",
+            "mock_label": "Sunscreen",
+            "accent": "#8B6656"
+          }
+        },
+        "step_5": {
+          "type": "step",
+          "settings": {
+            "title": "شفايف",
+            "product_name": "ليب بالم",
+            "text": "ترطيب ونعومة",
+            "mock_kind": "jar",
+            "mock_cap": "#C0262D",
+            "mock_body": "#FFFFFF",
+            "mock_ink": "#8B6656",
+            "mock_label": "Lip Balm",
+            "accent": "#8B6656"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "step_5"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "title": "الروتين",
+        "subtitle": "دليلك خطوة بخطوة لبشرة صحية ومنورة.",
+        "heading_size": "h1",
+        "button_label": "",
+        "step_button_label": "تسوّقي الخطوة دي",
+        "color_scheme": "scheme-2",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "reviews": {
@@ -321,73 +485,73 @@
         "review_3"
       ],
       "settings": {
-        "eyebrow": "آراء عملائنا",
-        "title": "جرّبوا 4M وقالوا",
+        "eyebrow": "",
+        "title": "آراء عميلاتنا",
         "heading_size": "h1",
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-1",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "subtitle": "اللي بيقولوه عن 4M"
       }
     },
-    "badges": {
-      "type": "trust-badges",
+    "ugc": {
+      "type": "ugc-gallery",
       "blocks": {
-        "badge_1": {
-          "type": "badge",
+        "p1": {
+          "type": "photo",
           "settings": {
-            "icon": "shield",
-            "title": "ينصح بيها أطباء الجلدية",
-            "text": "<p>تركيبات مدروسة وآمنة لبشرة صحية كل يوم</p>"
+            "accent": "#FBE3D3"
           }
         },
-        "badge_2": {
-          "type": "badge",
+        "p2": {
+          "type": "photo",
           "settings": {
-            "icon": "leaf",
-            "title": "مكونات مختارة بعناية",
-            "text": "<p>خالية من المواد الضارة، لطيفة وفعّالة</p>"
+            "accent": "#F6E9DE"
           }
         },
-        "badge_3": {
-          "type": "badge",
+        "p3": {
+          "type": "photo",
           "settings": {
-            "icon": "check",
-            "title": "آمنة لكل أنواع البشرة",
-            "text": "<p>دهنية، جافة أو حساسة</p>"
+            "accent": "#EFE4F4"
           }
         },
-        "badge_4": {
-          "type": "badge",
+        "p4": {
+          "type": "photo",
           "settings": {
-            "icon": "truck",
-            "title": "توصيل لكل مصر",
-            "text": "<p>توصيل سريع والدفع عند الاستلام</p>"
+            "accent": "#FBE3D3"
           }
         }
       },
       "block_order": [
-        "badge_1",
-        "badge_2",
-        "badge_3",
-        "badge_4"
+        "p1",
+        "p2",
+        "p3",
+        "p4"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
+        "eyebrow": "",
+        "title": "4M عليكي",
+        "text": "روتين حقيقي، نتيجة حقيقية.",
+        "heading_after": 2,
+        "handle": "@4mcosmetics",
         "color_scheme": "scheme-1",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "padding_top": 20,
+        "padding_bottom": 80
       }
     }
   },
   "order": [
     "hero",
-    "best_sellers",
-    "skin_concerns",
-    "routine",
-    "bundles",
+    "new_arrival",
+    "feature_2",
+    "collection",
     "about",
+    "skin_concerns",
+    "bundles",
+    "hydration",
+    "quiz",
+    "ritual",
     "reviews",
-    "badges"
+    "ugc"
   ]
 }

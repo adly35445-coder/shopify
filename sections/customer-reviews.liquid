@@ -21,6 +21,9 @@
       {%- if section.settings.title != blank -%}
         <h2 class="title inline-richtext {{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
       {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="brand-subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
     </div>
 
     <ul class="reviews" tabindex="0" aria-label="{{ section.settings.title | strip_html | escape }}">
@@ -33,17 +36,10 @@
           </div>
           <blockquote class="review__quote">{{ block.settings.quote }}</blockquote>
           <div class="review__author">
-            {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 120 | image_tag: loading: 'lazy', class: 'review__avatar', alt: block.settings.name }}
-            {%- else -%}
-              <span class="review__avatar review__avatar--initial" aria-hidden="true">{{ block.settings.name | slice: 0 }}</span>
+            <p class="review__name">{{ block.settings.name }}</p>
+            {%- if block.settings.product != blank -%}
+              <p class="review__product">{{ block.settings.product }}</p>
             {%- endif -%}
-            <div>
-              <p class="review__name">{{ block.settings.name }}</p>
-              {%- if block.settings.product != blank -%}
-                <p class="review__product">{{ block.settings.product }}</p>
-              {%- endif -%}
-            </div>
           </div>
         </li>
       {%- endfor -%}
@@ -60,6 +56,7 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Small text above heading", "default": "آراء عملائنا" },
     { "type": "inline_richtext", "id": "title", "label": "Heading", "default": "جرّبوا 4M وقالوا" },
+    { "type": "text", "id": "subtitle", "label": "Subheading" },
     {
       "type": "select",
       "id": "heading_size",
@@ -84,7 +81,7 @@
         { "type": "textarea", "id": "quote", "label": "Review", "default": "اكتبي هنا رأي العميلة في المنتج." },
         { "type": "text", "id": "name", "label": "Customer name", "default": "اسم العميلة" },
         { "type": "text", "id": "product", "label": "Product name (optional)" },
-        { "type": "image_picker", "id": "image", "label": "Photo (optional)" }
+        { "type": "image_picker", "id": "image", "label": "Photo (not shown in this style)" }
       ]
     }
   ],

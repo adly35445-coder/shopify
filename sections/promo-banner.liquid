@@ -1,0 +1,78 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="promo-banner{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="promo-banner__media" style="--accent: {{ section.settings.accent }};">
+        {%- if section.settings.image != blank -%}
+          {{
+            section.settings.image
+            | image_url: width: 1800
+            | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1800', sizes: '(min-width: 750px) 50vw, 100vw', alt: section.settings.heading
+          }}
+        {%- elsif section.settings.show_mocks -%}
+          {%- render 'product-mock', cap: '#6B3FC9', label: 'Cleanser', size: 'sm' -%}
+          {%- render 'product-mock', cap: '#2B2420', body: '#2B2420', ink: '#FFFFFF', label: 'Lotion' -%}
+          {%- render 'product-mock', cap: '#E85D0F', label: 'Sunscreen', size: 'sm' -%}
+        {%- endif -%}
+      </div>
+      <div class="promo-banner__content">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="brand-eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="promo-banner__heading h0">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="promo-banner__text rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+          <a
+            {% if section.settings.button_link != blank %}
+              href="{{ section.settings.button_link }}"
+            {% else %}
+              role="link" aria-disabled="true"
+            {% endif %}
+            class="button button--primary"
+          >
+            {{- section.settings.button_label | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Promo banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "checkbox", "id": "show_mocks", "label": "Show drawn products when there is no image", "default": true },
+    { "type": "color", "id": "accent", "label": "Image background color", "default": "#F3D3BF" },
+    { "type": "text", "id": "eyebrow", "label": "Small text above heading", "default": "SKIN QUIZ" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "اعرفي روتينك المثالي" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>جاوبي على أسئلة بسيطة عن بشرتك، وإحنا نرشحلك الروتين المناسب ليكي خطوة بخطوة.</p>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "ابدئي الاختبار" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 40 }
+  ],
+  "presets": [{ "name": "Promo banner" }]
+}
+{% endschema %}

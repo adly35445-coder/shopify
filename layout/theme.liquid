@@ -283,14 +283,16 @@
     {%- if settings.use_cairo_font -%}
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Pinyon+Script&family=Noto+Naskh+Arabic:wght@400;500;600&family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
       <style>
         :root {
-          --font-body-family: 'Cairo', sans-serif;
-          --font-heading-family: 'Cairo', sans-serif;
+          --font-body-family: 'Noto Naskh Arabic', Georgia, serif;
+          --font-heading-family: 'Noto Naskh Arabic', Georgia, serif;
+          --font-script-family: 'Pinyon Script', 'Aref Ruqaa', serif;
+          --font-caps-family: 'Montserrat', 'Tajawal', sans-serif;
           --font-body-weight: 400;
-          --font-body-weight-bold: 700;
-          --font-heading-weight: 700;
+          --font-body-weight-bold: 600;
+          --font-heading-weight: 500;
         }
       </style>
     {%- endif -%}
