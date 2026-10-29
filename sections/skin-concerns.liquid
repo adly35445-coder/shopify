@@ -1,0 +1,119 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <div class="brand-heading center">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="brand-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="brand-subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    <ul class="skin-concerns{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %}data-cascade{% endif %}>
+      {%- for block in section.blocks -%}
+        <li
+          class="skin-concern{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          style="--accent: {{ block.settings.accent }}; {% if settings.animations_reveal_on_scroll %}--animation-order: {{ forloop.index }};{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          <a
+            class="skin-concern__link"
+            {% if block.settings.link != blank %}
+              href="{{ block.settings.link }}"
+            {% else %}
+              role="link" aria-disabled="true"
+            {% endif %}
+          >
+            <div class="skin-concern__media">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', widths: '300, 450, 600', sizes: '(min-width: 990px) 25vw, 50vw', alt: block.settings.title }}
+              {%- else -%}
+                <span class="skin-concern__icon" aria-hidden="true">{{ block.settings.emoji }}</span>
+              {%- endif -%}
+            </div>
+            <div class="skin-concern__body">
+              <h3 class="skin-concern__title">{{ block.settings.title }}</h3>
+              {%- if block.settings.text != blank -%}
+                <p class="skin-concern__text">{{ block.settings.text }}</p>
+              {%- endif -%}
+              {%- if block.settings.product_label != blank -%}
+                <span class="skin-concern__product">{{ block.settings.product_label }}</span>
+              {%- endif -%}
+            </div>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Skin concerns",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small text above heading", "default": "اعرفي بشرتك" },
+    { "type": "inline_richtext", "id": "title", "label": "Heading", "default": "اختاري مشكلة بشرتك" },
+    { "type": "text", "id": "subtitle", "label": "Subheading", "default": "وإحنا نقولك المنتج المناسب ليكي" },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-2" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 60 }
+  ],
+  "blocks": [
+    {
+      "type": "concern",
+      "name": "Concern",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "emoji", "label": "Icon (shown if no image)", "default": "✨" },
+        { "type": "color", "id": "accent", "label": "Accent color", "default": "#E85D0F" },
+        { "type": "text", "id": "title", "label": "Title", "default": "بشرة دهنية" },
+        { "type": "text", "id": "text", "label": "Text" },
+        { "type": "text", "id": "product_label", "label": "Recommended product label", "default": "المنتج المناسب" },
+        { "type": "url", "id": "link", "label": "Link (product or collection)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Skin concerns",
+      "blocks": [
+        { "type": "concern" },
+        { "type": "concern" },
+        { "type": "concern" },
+        { "type": "concern" }
+      ]
+    }
+  ]
+}
+{% endschema %}

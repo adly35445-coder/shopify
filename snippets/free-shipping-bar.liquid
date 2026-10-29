@@ -1,0 +1,34 @@
+{%- comment -%}
+  Shows how much is left until free shipping. Threshold is set in Theme settings → 4M Brand.
+{%- endcomment -%}
+{%- if settings.free_shipping_bar_enable and settings.free_shipping_threshold > 0 and cart.item_count > 0 -%}
+  {%- liquid
+    assign threshold_cents = settings.free_shipping_threshold | times: 100 | times: cart.currency.rate | ceil
+    assign remaining = threshold_cents | minus: cart.total_price
+    assign percent = cart.total_price | times: 100 | divided_by: threshold_cents | at_most: 100
+    assign is_ar = false
+    if request.locale.iso_code == 'ar'
+      assign is_ar = true
+    endif
+  -%}
+  <div class="free-shipping-bar">
+    <p class="free-shipping-bar__text">
+      {%- if remaining > 0 -%}
+        {%- if is_ar -%}
+          فاضلك <strong>{{ remaining | money }}</strong> وتاخدي شحن مجاني 🚚
+        {%- else -%}
+          You're <strong>{{ remaining | money }}</strong> away from free shipping 🚚
+        {%- endif -%}
+      {%- else -%}
+        {%- if is_ar -%}
+          مبروك! طلبك شحنه مجاني 🎉
+        {%- else -%}
+          Congrats! Your order ships free 🎉
+        {%- endif -%}
+      {%- endif -%}
+    </p>
+    <div class="free-shipping-bar__track" aria-hidden="true">
+      <span class="free-shipping-bar__fill" style="width: {{ percent }}%"></span>
+    </div>
+  </div>
+{%- endif -%}
