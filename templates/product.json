@@ -3,13 +3,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title"
         },
@@ -41,16 +34,63 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "skin_type": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.skin_type.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "trust": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "truck",
+            "heading_1": "شحن لكل مصر",
+            "icon_2": "check_mark",
+            "heading_2": "صناعة مصرية أصلية",
+            "icon_3": "leaf",
+            "heading_3": "مكونات آمنة"
+          }
+        },
+        "ingredients": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "المكونات",
+            "icon": "leaf",
+            "content": "{{ product.metafields.custom.ingredients | metafield_tag }}"
+          }
+        },
+        "how_to_use": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "طريقة الاستخدام",
+            "icon": "heart",
+            "content": "{{ product.metafields.custom.how_to_use | metafield_tag }}"
+          }
+        },
+        "shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "الشحن",
+            "icon": "truck",
+            "content": "<p>بنشحن لكل محافظات مصر. لو عندك أي سؤال عن طلبك، كلمينا وهنرد عليكي بسرعة.</p>"
+          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
+        "skin_type",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "trust",
         "description",
+        "ingredients",
+        "how_to_use",
+        "shipping",
         "share"
       ],
       "settings": {

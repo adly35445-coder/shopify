@@ -620,6 +620,55 @@
         "speed": 28,
         "color_scheme": "scheme-4"
       }
+    },
+    "trust": {
+      "type": "trust-badges",
+      "blocks": {
+        "t1": {
+          "type": "badge",
+          "settings": {
+            "icon": "truck",
+            "title": "شحن لكل مصر",
+            "text": "<p>توصيل لحد باب البيت</p>"
+          }
+        },
+        "t2": {
+          "type": "badge",
+          "settings": {
+            "icon": "leaf",
+            "title": "مكونات آمنة",
+            "text": "<p>تركيبات مدروسة تناسب بشرتنا</p>"
+          }
+        },
+        "t3": {
+          "type": "badge",
+          "settings": {
+            "icon": "check",
+            "title": "صُنع في مصر",
+            "text": "<p>بمعايير جودة عالمية</p>"
+          }
+        },
+        "t4": {
+          "type": "badge",
+          "settings": {
+            "icon": "shield",
+            "title": "دفع آمن",
+            "text": "<p>ادفعي بالطريقة اللي تريحك</p>"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "heading_size": "h1",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
@@ -635,6 +684,7 @@
     "quiz",
     "ritual",
     "reviews",
+    "trust",
     "ugc"
   ]
 }

@@ -1,0 +1,90 @@
+{%- comment -%}
+  Phone-only bar that slides up once the main "Add to cart" button scrolls out of view.
+  Clicking it presses the real add button, so variants, quantity and the cart drawer keep working.
+  Accepts: product, section_id
+{%- endcomment -%}
+{%- assign variant = product.selected_or_first_available_variant -%}
+<sticky-atc class="sticky-atc color-scheme-1" data-section="{{ section_id }}" hidden>
+  <div class="sticky-atc__info">
+    <p class="sticky-atc__title">{{ product.title | escape }}</p>
+    <p class="sticky-atc__price" data-sticky-price>{{ variant.price | money }}</p>
+  </div>
+  <button type="button" class="sticky-atc__button button button--primary"{% unless variant.available %} disabled{% endunless %}>
+    {%- if variant.available -%}
+      {{ 'products.product.add_to_cart' | t }}
+    {%- else -%}
+      {{ 'products.product.sold_out' | t }}
+    {%- endif -%}
+  </button>
+</sticky-atc>
+
+<style>
+  .sticky-atc {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 1.6rem calc(1rem + env(safe-area-inset-bottom));
+    background: rgb(var(--color-background));
+    box-shadow: 0 -0.4rem 1.6rem rgba(0, 0, 0, 0.08);
+    transform: translateY(110%);
+    transition: transform 0.3s ease;
+  }
+  .sticky-atc.is-visible { transform: translateY(0); }
+  .sticky-atc__info { flex: 1; min-width: 0; }
+  .sticky-atc__title {
+    margin: 0;
+    font-size: 1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sticky-atc__price { margin: 0; font-size: 1.4rem; font-weight: 700; }
+  .sticky-atc__button { min-width: 0; min-height: 4.4rem; padding: 0 2rem; flex-shrink: 0; }
+  @media screen and (min-width: 750px) {
+    .sticky-atc { display: none; }
+  }
+</style>
+
+<script>
+  if (!customElements.get('sticky-atc')) {
+    customElements.define(
+      'sticky-atc',
+      class StickyAtc extends HTMLElement {
+        connectedCallback() {
+          const id = this.dataset.section;
+          this.realButton = document.querySelector(`#product-form-${id} [name="add"]`);
+          if (!this.realButton) return;
+          this.hidden = false;
+
+          // Look the real button up on each click: Dawn can swap it when the variant changes
+          this.querySelector('button').addEventListener('click', () =>
+            document.querySelector(`#product-form-${id} [name="add"]`)?.click()
+          );
+
+          // Show the bar once the real button has scrolled up out of view
+          new IntersectionObserver(([entry]) => {
+            const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+            this.classList.toggle('is-visible', passed);
+          }).observe(this.realButton);
+
+          // Keep price and availability in step with the variant picker
+          if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+            subscribe(PUB_SUB_EVENTS.variantChange, ({ data }) => {
+              if (data.sectionId !== id || !data.variant) return;
+              const html = data.html.querySelector(`#price-${id} .price-item--last, #price-${id} .price-item--regular`);
+              if (html) this.querySelector('[data-sticky-price]').textContent = html.textContent.trim();
+              const btn = this.querySelector('button');
+              btn.disabled = !data.variant.available;
+              const real = document.querySelector(`#product-form-${id} [name="add"] span`);
+              if (real) btn.textContent = real.textContent.trim();
+            });
+          }
+        }
+      }
+    );
+  }
+</script>

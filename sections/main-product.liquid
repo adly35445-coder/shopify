@@ -211,6 +211,9 @@
                 {%- when 'custom_liquid' -%}
                   {{ block.settings.custom_liquid }}
                 {%- when 'collapsible_tab' -%}
+                  {%- if block.settings.content == blank and block.settings.page == blank and request.design_mode == false -%}
+                    {%- continue -%}
+                  {%- endif -%}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                     <details id="Details-{{ block.id }}-{{ section.id }}">
                       <summary>
@@ -751,6 +754,9 @@
       </script>
     </div>
   </product-component>
+  {%- if section.settings.sticky_add_to_cart -%}
+    {%- render 'sticky-add-to-cart', product: product, section_id: section.id -%}
+  {%- endif -%}
 </product-info>
 
 {% schema %}
@@ -2147,6 +2153,12 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "sticky_add_to_cart",
+      "label": "Sticky add-to-cart bar on phones",
+      "default": true
+    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",
