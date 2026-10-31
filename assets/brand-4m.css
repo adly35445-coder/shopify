@@ -314,6 +314,13 @@ body {
 [dir='rtl'] .feature-split__text,
 [dir='rtl'] .feature-split__subheading {
   letter-spacing: 0;
+  font-family: var(--font-body-family);
+  font-style: normal;
+  font-weight: 500;
+}
+
+[dir='rtl'] .feature-split__content .button {
+  font-style: normal;
 }
 
 .feature-split__content .button {
@@ -594,7 +601,8 @@ body {
 .routine-step__button {
   margin-top: auto;
   min-height: 4.4rem;
-  padding: 0 1.6rem;
+  padding: 0 1rem;
+  white-space: nowrap;
   font-family: var(--font-heading-family);
   text-transform: none;
   letter-spacing: 0.05rem;
@@ -914,3 +922,18 @@ body {
   justify-content: flex-start;
 }
 
+
+@media screen and (max-width: 749px) {
+  .routine-step__button {
+    font-size: 1.4rem;
+  }
+}
+
+/* A lone last step on the 2-column phone grid sits in the middle */
+@media screen and (max-width: 989px) {
+  .routine-step:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 0.8rem);
+  }
+}

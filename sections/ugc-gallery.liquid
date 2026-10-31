@@ -44,12 +44,16 @@
 
 {%- capture photos_before -%}
   {%- for block in section.blocks limit: section.settings.heading_after -%}
-    {%- render 'framed-photo', block: block -%}
+    {%- if block.settings.image != blank or request.design_mode -%}
+      {%- render 'framed-photo', block: block -%}
+    {%- endif -%}
   {%- endfor -%}
 {%- endcapture -%}
 {%- capture photos_after -%}
   {%- for block in section.blocks offset: section.settings.heading_after -%}
-    {%- render 'framed-photo', block: block -%}
+    {%- if block.settings.image != blank or request.design_mode -%}
+      {%- render 'framed-photo', block: block -%}
+    {%- endif -%}
   {%- endfor -%}
 {%- endcapture -%}
 
